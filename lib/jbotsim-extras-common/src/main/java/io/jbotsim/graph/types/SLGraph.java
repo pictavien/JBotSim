@@ -14,7 +14,7 @@ import static io.jbotsim.graph.utils.Helper.indexOf;
 /**
  * Created by acasteig on 31/05/17.
  */
-public class SLGraph implements java.io.Serializable, Comparable<SLGraph> {
+public class SLGraph implements java.io.Serializable, Comparable<SLGraph>, Graph {
     public Integer n, m;
     protected List<Edge> edges = new ArrayList<>();
     public SLGraph canonical = null;
@@ -155,6 +155,7 @@ public class SLGraph implements java.io.Serializable, Comparable<SLGraph> {
         return new SLGraph(ndates);
     }
 
+    @Override
     public List<Edge> getEdges() {
         return new ArrayList<>(edges);
     }
@@ -442,5 +443,33 @@ public class SLGraph implements java.io.Serializable, Comparable<SLGraph> {
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public List<Integer> getNodes() {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(Edge e: edges)
+            addNodesToListIfNotPresent(list, e);
+
+        return list;
+    }
+
+    private static void addNodesToListIfNotPresent(ArrayList<Integer> list, Edge e) {
+        if(!list.contains(e.from))
+            list.add(e.from);
+        if(!list.contains(e.to))
+            list.add(e.to);
+    }
+
+    @Override
+    public Integer degreeOf(int vertex) {
+        int degree = 0;
+        for(Edge e: edges) {
+            if (e.from == vertex)
+                degree++;
+            if (e.to == vertex)
+                degree++;
+        }
+        return degree;
     }
 }

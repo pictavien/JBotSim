@@ -1,10 +1,11 @@
-package io.jbotsim;
+package io.jbotsim.ui;
 
 import io.jbotsim.core.Topology;
+import io.jbotsim.graph.DegreeSequence;
+import io.jbotsim.graph.types.Graph;
+import io.jbotsim.graph.types.SLGraph;
 import io.jbotsim.serialization.tikz.TikzTopologySerializer;
-import io.jbotsim.topology.DegreeSequence;
-import io.jbotsim.ui.JTopology;
-import org.jgrapht.UndirectedGraph;
+import io.jbotsim.topology.GraphRenderer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,21 +23,18 @@ import java.util.List;
  */
 
 /**
- * The {@link GraphSlider} displays a set of jgrapht {@link UndirectedGraph}s by providing a slider.
+ * The {@link JGraphSlider} displays a set of {@link Graph}s by providing a slider.
  * Arrows allow the user to navigate right or left amongst the graphs.
  */
-public class GraphSlider extends JFrame {
+public class JGraphSlider extends JFrame {
     Topology tp;
     JTopology jtp;
-    List<UndirectedGraph> graphs = new ArrayList<>();
-    HashMap<UndirectedGraph, Topology> topologies = new HashMap<>();
+    List<Graph> graphs = new ArrayList<>();
+    HashMap<Graph, Topology> topologies = new HashMap<>();
     Integer current = null;
     private final JLabel label;
 
-    public static void main(String[] args) {
-        new GraphSlider();
-    }
-    public GraphSlider() {
+    public JGraphSlider() {
         jtp = new JTopology(new Topology());
         add(jtp, BorderLayout.CENTER);
         JPanel panel = new JPanel();
@@ -72,11 +70,11 @@ public class GraphSlider extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public void add(UndirectedGraph graph) {
+    public void add(Graph graph) {
         addAll(Arrays.asList(graph));
     }
 
-    public void addAll(Collection<UndirectedGraph> graphs){
+    public void addAll(Collection<Graph> graphs){
         this.graphs.addAll(graphs);
         if (current == null && this.graphs.size() > 0)
             setCurrentGraph(0);
@@ -84,11 +82,11 @@ public class GraphSlider extends JFrame {
 
     private void setCurrentGraph(int index){
         current = index;
-        UndirectedGraph graph = graphs.get(current);
+        Graph graph = graphs.get(current);
         if (topologies.keySet().contains(graph))
             jtp.setTopology(topologies.get(graph));
         else {
-            Topology tp = Renderer.renderGraph(graph);
+            Topology tp = GraphRenderer.renderGraph(graph);
             topologies.put(graph, tp);
             jtp.setTopology(tp);
         }
@@ -108,7 +106,11 @@ public class GraphSlider extends JFrame {
         setCurrentGraph((current + 1) % graphs.size());
     }
 
-    public void exportLatex(List<UndirectedGraph> selected){
+    public void exportLatex(List<Graph> selected){
+        // only handle SLGraph for now
+        if(! (selected.get(0) instanceof SLGraph))
+            return;
+
         if (selected.size() % 2 == 1)
             selected.add(selected.get(selected.size()-1));
 
@@ -119,10 +121,10 @@ public class GraphSlider extends JFrame {
                 "\\begin{document}\n";
         for (int i=0; i<selected.size(); i+=2) {
             s += "\\noindent";
-            UndirectedGraph g1 = selected.get(i);
-            UndirectedGraph g2 = selected.get(i+1);
-            Topology tp1 = Renderer.renderGraph(g1);
-            Topology tp2 = Renderer.renderGraph(g2);
+            SLGraph g1 = (SLGraph)selected.get(i);
+            SLGraph g2 = (SLGraph)selected.get(i+1);
+            Topology tp1 = GraphRenderer.renderGraph(g1);
+            Topology tp2 = GraphRenderer.renderGraph(g2);
             s += "\\hspace{1cm}" + i + " : " + new DegreeSequence(g1)+"\\hspace{4cm}";
             s += ((i+1) + " : " + new DegreeSequence(g2) +"\n\n");
             s += new TikzTopologySerializer().exportTopology(tp1).replaceAll("e=1", "e=.7");

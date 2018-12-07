@@ -1,6 +1,9 @@
 package io.jbotsim.graph;
 
+import io.jbotsim.graph.types.SLGraph;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,6 +22,12 @@ public class DegreeSequence {
 //            sequence.add(graph.degreeOf(i));
 //        Collections.sort(sequence, Collections.reverseOrder());
 //    }
+
+    public DegreeSequence(SLGraph graph) {
+        for (int i : graph.getNodes())
+            sequence.add(graph.degreeOf(i));
+        Collections.sort(sequence, Collections.reverseOrder());
+    }
 
     private static int sum(List<Integer> seq, int from, int to){
         int sum = 0;
