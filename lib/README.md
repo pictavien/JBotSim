@@ -35,6 +35,11 @@ manipulation.
 * [`jbotsim-ui-swing`](./jbotsim-ui-swing/README.md): generates/publish a jar containing AWT/SWING-specific classes 
 for UI manipulation.
   This submodule is the AWT/SWING extension of the `jbotsim-ui-common` submodule.
+* [`jbotsim-adapter-jgrapht`](./jbotsim-adapter-jgrapht/README.md): generates/publish a jar containing an adapter of 
+the JGraphT library for JBotSim.
+  Since it implies a dependency to an external library, this submodule is separated from the others and should only be
+  pulled when needed.
+  You can add here classes used as a bridge between JBotSim and JGraphT.
 
 
 
