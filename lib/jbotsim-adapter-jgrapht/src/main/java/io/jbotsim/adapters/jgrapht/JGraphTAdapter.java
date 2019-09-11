@@ -327,10 +327,10 @@ public class JGraphTAdapter {
     }
 
     private static Link createUndirectedLink(Node sourceNode, Node destinationNode) {
-        return new Link(sourceNode, destinationNode, Link.Type.UNDIRECTED, Link.Mode.WIRED);
+        return new Link(sourceNode, destinationNode, Link.Orientation.UNDIRECTED, Link.Mode.WIRED);
     }
     private static Link createDirectedLink(Node sourceNode, Node destinationNode) {
-        return new Link(sourceNode, destinationNode, Link.Type.DIRECTED, Link.Mode.WIRED);
+        return new Link(sourceNode, destinationNode, Link.Orientation.DIRECTED, Link.Mode.WIRED);
     }
 
     private static Node getNodeForVertex(Map<Object, Node> vertexToNode, Object vertex) {

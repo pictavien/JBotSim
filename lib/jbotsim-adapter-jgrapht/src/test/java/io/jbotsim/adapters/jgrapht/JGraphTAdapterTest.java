@@ -100,7 +100,7 @@ public class JGraphTAdapterTest {
     }
 
     protected Link addLink(Topology topology, Node n1, Node n2, double weight, boolean directed) {
-        Link.Type type = directed ? Link.Type.DIRECTED : Link.Type.UNDIRECTED;
+        Link.Orientation type = directed ? Link.Orientation.DIRECTED : Link.Orientation.UNDIRECTED;
         Link link = new Link(n1, n2, type, Link.Mode.WIRED);
         link.setProperty(WEIGHT_PROPERTY_KEY, weight);
 

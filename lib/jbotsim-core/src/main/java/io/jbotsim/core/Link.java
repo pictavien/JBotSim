@@ -83,7 +83,7 @@ public class Link extends Properties implements Comparable<Link> {
     public Link(Link link) {
         this.destination = link.destination;
         this.source = link.source;
-        this.type = link.type;
+        this.orientation = link.orientation;
         this.mode = link.mode;
     }
 
