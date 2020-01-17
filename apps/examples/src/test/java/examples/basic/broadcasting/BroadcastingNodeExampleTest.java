@@ -29,9 +29,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Collection;
 import java.util.List;
 
-public class BroadcastingNodeExampleTest extends ExampleTestHelper<Main> {
+public class BroadcastingNodeExampleTest extends ExampleTestHelper {
     @Override
-    protected Class<Main> getTestedClass() {
+    protected Class getTestedClass() {
         return Main.class;
     }
 

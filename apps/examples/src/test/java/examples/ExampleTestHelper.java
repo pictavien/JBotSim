@@ -30,11 +30,11 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 
-public abstract class ExampleTestHelper<T> {
+public abstract class ExampleTestHelper {
     protected Topology testedTopology;
     protected Random prng = new Random();
 
-    protected abstract Class<T> getTestedClass();
+    protected abstract Class getTestedClass();
 
     public Topology buildTopology()
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -71,7 +71,6 @@ public abstract class ExampleTestHelper<T> {
     @BeforeEach
     public void setUp() {
         try {
-            System.err.println("setUp");
             testedTopology = buildTopology();
             testedTopology.start();
         } catch (Exception e) {
