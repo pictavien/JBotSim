@@ -21,9 +21,11 @@
 
 package examples.basic.dyingnode;
 
+import examples.Random;
 import examples.basic.moving.MovingNode;
 
 public class DyingNode extends MovingNode {
+    Random rnd = new Random();
 
     @Override
     public void onClock() {
@@ -33,7 +35,7 @@ public class DyingNode extends MovingNode {
     }
 
     private void dieRandomly(double survivingChance) {
-        if(Math.random() > survivingChance)
+        if(rnd.nextDouble() > survivingChance)
             this.die();
     }
 }
