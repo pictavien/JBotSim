@@ -327,7 +327,18 @@ public class Topology extends Properties implements ClockListener {
      * @return the current clock model.
      */
     public Class<? extends Clock> getClockModel() {
-        return clockManager.getClockModel();
+        Clock clk = getClock();
+        if (clk != null)
+            return clk.getClass();
+        return null;
+    }
+
+    /**
+     * Returns the current clock in use.
+     * @return the current clock.
+     */
+    public Clock getClock() {
+        return clockManager.getClock();
     }
 
     /**
