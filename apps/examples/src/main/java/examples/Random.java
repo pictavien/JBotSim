@@ -24,12 +24,12 @@ package examples;
 public class Random {
     private static java.util.Random prng = new java.util.Random();
 
-    public void setSeed(long seed) {
+    public static void setSeed(long seed) {
         prng.setSeed(seed);
     }
 
-    public double random() {
-        return nextDouble();
+    public static double random() {
+        return prng.nextDouble();
     }
 
     public double nextDouble() {
