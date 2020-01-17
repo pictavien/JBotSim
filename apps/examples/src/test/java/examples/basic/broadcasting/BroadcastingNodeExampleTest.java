@@ -54,17 +54,17 @@ public class BroadcastingNodeExampleTest extends ExampleTestHelper {
 
         for(int i = 0; i < minDim; i++) {
             nbRed += i + 1;
-            assertEquals(nbRed, nbInformed(nodes), "at iteration"+i);
+            assertEquals(nbRed, nbInformed(nodes), "at iteration "+i);
             iterate();
         }
         for(int i = minDim; i < maxDim; i++) {
             nbRed += minDim;
-            assertEquals(nbRed, nbInformed(nodes), "at "+i);
+            assertEquals(nbRed, nbInformed(nodes), "at iteration "+i);
             iterate();
         }
         for(int i = 0; i < minDim; i++) {
             nbRed += minDim - i - 1;
-            assertEquals(nbRed, nbInformed(nodes), "at "+i);
+            assertEquals(nbRed, nbInformed(nodes), "at iteration "+i);
             iterate();
         }
         assertEquals(nodes.size(), nbInformed(nodes));
