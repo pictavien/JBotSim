@@ -67,6 +67,6 @@ public class IterableClock extends Clock {
     }
 
     private void useless_method(String method) {
-        System.err.println("examples.IteratedClock: '"+method+"' is irrelevant.");
+        // System.err.println("examples.IteratedClock: '"+method+"' is irrelevant.");
     }
 }
