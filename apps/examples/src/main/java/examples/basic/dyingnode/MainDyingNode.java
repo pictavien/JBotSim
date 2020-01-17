@@ -27,15 +27,19 @@ import io.jbotsim.ui.JViewer;
 public class MainDyingNode {
     public static void main(String[] args) {
 
-        Topology topology = new Topology();
-        topology.setDefaultNodeModel(DyingNode.class);
-
-        int nbNodes = 5;
-        for(int i = 0; i< nbNodes; i++)
-            topology.addNode(topology.getWidth()/2, topology.getHeight()/2);
+        Topology topology = buildTopology();
 
         new JViewer(topology);
         topology.start();
     }
 
+    public static Topology buildTopology() {
+        Topology topology = new Topology();
+        topology.setDefaultNodeModel(DyingNode.class);
+
+        int nbNodes = 5;
+        for (int i = 0; i < nbNodes; i++)
+            topology.addNode(topology.getWidth() / 2, topology.getHeight() / 2);
+        return topology;
+    }
 }
