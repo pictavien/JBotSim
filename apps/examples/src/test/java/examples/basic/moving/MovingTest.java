@@ -63,7 +63,7 @@ class MovingTest extends ExampleTestHelper {
     @MethodSource("provideSeedsAndRounds")
     public void checkStates(long seed, int nbRounds, String expectedResult)
             throws Exception {
-        boolean generateExpectedResult = true;
+        boolean generateExpectedResult = false;
         iterateAndCheckState(seed, nbRounds, expectedResult, (tp) -> {
             deployRandomNodes(tp, Random.nextInt(MAX_NB_NODES));
         }, generateExpectedResult);

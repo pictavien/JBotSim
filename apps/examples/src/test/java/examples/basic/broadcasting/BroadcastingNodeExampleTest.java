@@ -112,7 +112,7 @@ public class BroadcastingNodeExampleTest extends ExampleTestHelper {
     @MethodSource("provideSelectedNodeAndRounds")
     public void checkMovingIcons(int node,  int nbRounds, String expectedResult)
             throws Exception {
-        boolean generateExpectedResult = true;
+        boolean generateExpectedResult = false;
         iterateAndCheckState(Random.INITIAL_SEED, nbRounds, expectedResult, (t) -> {
             List<Node> nodes = t.getNodes();
             t.selectNode(nodes.get(node));
