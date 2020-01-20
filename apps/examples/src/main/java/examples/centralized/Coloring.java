@@ -25,7 +25,8 @@ import io.jbotsim.core.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
+//import java.util.Random;
+import examples.Random;
 import java.util.Set;
 
 import io.jbotsim.core.Link;
@@ -33,6 +34,7 @@ import io.jbotsim.core.Node;
 import io.jbotsim.core.Topology;
 import io.jbotsim.core.event.ConnectivityListener;
 import io.jbotsim.ui.JViewer;
+
 
 public class Coloring implements ConnectivityListener{
 
@@ -98,10 +100,16 @@ public class Coloring implements ConnectivityListener{
 			colors.add(ng.getColor());
 		return colors;
 	}
-	
-	public static void main(String[] args){
+
+	public static Topology buildTopology() {
 		Topology tp = new Topology();
 		new Coloring(tp);
+
+		return tp;
+	}
+
+	public static void main(String[] args){
+		Topology tp = buildTopology();
 		JViewer jv = new JViewer(tp);
 	}
 }
