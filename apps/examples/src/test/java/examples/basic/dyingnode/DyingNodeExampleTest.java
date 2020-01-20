@@ -19,11 +19,9 @@
  *
  */
 
-package examples.dyingnode;
+package examples.basic.dyingnode;
 
 import examples.ExampleTestHelper;
-import examples.Random;
-import examples.basic.dyingnode.MainDyingNode;
 import io.jbotsim.core.Node;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -59,10 +57,12 @@ public class DyingNodeExampleTest extends ExampleTestHelper {
                 Arguments.of(780532665l, 4707)
         );
     }
+
     @ParameterizedTest
     @MethodSource("provideSeedsAndRounds")
-    public void checkDyingNodes(long seeds, int expectedRounds) {
-        Random.setSeed(seeds);
+    public void checkDyingNodes(long seed, int expectedRounds)
+            throws Exception {
+        prepareTopology(seed);
         List<Node> nodes = testedTopology.getNodes();
         int nbRounds = 0;
         while (!testedTopology.getNodes().isEmpty()) {
