@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.basic.mobilebroadcast.MobileBroadcastNode" id="default"/>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node direction="3.649573582318958" id="0" x="469.2136300273428" y="281.28242789801334"/>
+      <node direction="1.254224295251861" id="1" x="571.300209307683" y="381.65177138500485"/>
+      <node direction="5.3644474856058295" id="2" x="192.94640932221955" y="299.46749599328837"/>
+      <node direction="0.49452942160246266" id="3" x="213.87228154091918" y="179.7357407433085"/>
+      <node direction="4.573545688087709" id="4" x="502.74919797911207" y="216.61670695233443"/>
+      <node direction="3.213793483614683" id="5" x="75.43769843632072" y="319.88079645009566"/>
+      <node direction="1.8067362591351694" id="6" x="320.72882732582" y="197.3455692597663"/>
+    </graph>
+  </topology>
+</jbotsim>

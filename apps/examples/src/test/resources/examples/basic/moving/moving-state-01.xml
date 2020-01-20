@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.basic.moving.MovingNode" id="default"/>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.46573142014498814" id="0" x="493.65797743089297" y="210.56143704506462"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.194044537858292" id="1" x="157.91079422742132" y="289.48912067560366"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.518466646195218" id="2" x="159.05684318836495" y="333.91562075198226"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.05442775365566251" id="3" x="97.21664380459151" y="141.7780681742953"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.528994812498293" id="4" x="6.527398654072613" y="352.871134054697"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.9585201847239175" id="5" x="12.918328989127872" y="363.33451863308187"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.69101235879219" id="6" x="365.69262839279884" y="276.12086130447983"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.6080604417484826" id="7" x="149.1807625958179" y="195.20533647125717"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.1317291569401595" id="8" x="286.8754138283746" y="382.8236087073433"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.3686507680839406" id="9" x="393.3102632675053" y="373.3711998701141"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.0943416722372294" id="10" x="5.1758400358444305" y="40.12049532887738"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.9531708646943904" id="11" x="36.860471255885955" y="226.27691806977327"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.5485363708246607" id="12" x="301.3339421291362" y="193.6570473910997"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.061041242186961955" id="13" x="294.01477017956404" y="395.2707680760748"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.9268781484646282" id="14" x="498.5882047255825" y="95.81578208409496"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.04626414418994" id="15" x="111.22250009533718" y="17.837926903222638"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.9603873363848958" id="16" x="460.08045477219684" y="208.35910775772447"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.9048046422105427" id="17" x="37.83693808300245" y="378.95506476603987"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.883582466267309" id="18" x="351.0606681339034" y="312.5250813499755"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.659713789716577" id="19" x="367.1477084867663" y="323.73373204656195"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.3235114495472686" id="20" x="81.72936722636211" y="24.294886900934728"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.739848149335265" id="21" x="28.118847293647264" y="186.85198364853466"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.0937934494868315" id="22" x="528.5409015932757" y="151.4095809244145"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.301123827751405" id="23" x="207.5220368669476" y="341.1102485006654"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.662254462670926" id="24" x="482.09771072108106" y="53.84664377102257"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.929038345488926" id="25" x="337.5175760556408" y="262.4162597328876"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.05462095706044" id="26" x="579.9260129445859" y="349.28259939339046"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.690179905598296" id="27" x="198.62435101056417" y="167.13586043244732"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.3616057207380369" id="28" x="193.78955061201452" y="99.14780416868257"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.440441133281357" id="29" x="342.76276898668675" y="271.5118507729701"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.248433745489798" id="30" x="171.0164015088095" y="287.5885284871947"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.418467674835874" id="31" x="500.14730892955026" y="285.3973071122541"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.3581081389440417" id="32" x="399.35111976243275" y="278.3561064145738"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.18025182126057" id="33" x="300.3860557482461" y="227.16730936374063"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.0046633675471403" id="34" x="305.99424792977493" y="123.46691249110916"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.873500254583681" id="35" x="232.47641008505798" y="329.4746343182194"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.282739701546076" id="36" x="146.40095644265602" y="222.5025606563188"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.133316048878699" id="37" x="272.11528967915797" y="292.1798586460277"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.082062275767934" id="38" x="123.33686657051703" y="82.32174890812121"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.7780984014475134" id="39" x="67.56476602909515" y="88.08189548208088"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.542962763945345" id="40" x="582.0414372980281" y="203.33031617761355"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.456634778000929" id="41" x="450.35370548533933" y="276.8681177737599"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.292708964910025" id="42" x="199.4492915930581" y="94.90695295289117"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.2670700107061923" id="43" x="387.15897693813645" y="342.7965219084937"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.5745284313773684" id="44" x="346.79824175351655" y="26.156630993794465"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.675677837611683" id="45" x="165.58416730444515" y="291.3564287341105"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.6173457794090407" id="46" x="105.38423160090349" y="235.42697125159702"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.0116272831059867" id="47" x="122.62496881203708" y="90.4312956064258"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.1086395957827055" id="48" x="562.2871956226477" y="233.42901280776493"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.66871853753896" id="49" x="370.05089425058577" y="203.93140059738982"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.708562714399161" id="50" x="327.35189588571666" y="18.98783666094147"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.1541940360802725" id="51" x="220.59356561330856" y="273.5011777991584"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.092136372846542" id="52" x="198.5354598224027" y="21.723703408741073"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.898748504240247" id="53" x="50.38818392380949" y="47.60537036524215"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.842039498337718" id="54" x="522.3551398057498" y="6.129771281285457"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.0065214148187085" id="55" x="217.88320953437687" y="138.50474383575568"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.982415423077296" id="56" x="33.11441136405438" y="216.1689270892159"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.7374859540886133" id="57" x="78.54538800293244" y="338.71506734134914"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.150402635452488" id="58" x="494.1127804981884" y="190.36108806141112"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.1321713134665663" id="59" x="253.66367686986632" y="346.92299203037544"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.762711524449576" id="60" x="561.9517609320014" y="210.93293414520394"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.8454449036059204" id="61" x="287.0285255878357" y="56.38221102564353"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.2264612086751367" id="62" x="532.4758987148957" y="44.30800623200781"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.155660317017626" id="63" x="436.7043624504713" y="368.7219796259509"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.824232011585479" id="64" x="276.25732849535075" y="333.64773018286405"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.24905431665017425" id="65" x="249.6782097841243" y="398.3919215769888"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.089674045932798" id="66" x="70.46464179018051" y="123.29436501907776"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.9989825997673965" id="67" x="582.779436043148" y="165.67250985839996"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.9191763780331526" id="68" x="540.0306993012077" y="291.69053404803276"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.8840967153085892" id="69" x="145.44076327479684" y="7.7150597414294"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.027391087938302" id="70" x="22.787743098040664" y="186.15566498868782"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.24177485094479392" id="71" x="168.6138014141835" y="21.656476331995805"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.3399864988646857" id="72" x="18.05213168248281" y="221.0728432821752"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.538489973579157" id="73" x="231.47038066837627" y="315.97857166424615"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.844537104268445" id="74" x="452.29696787599255" y="280.5141468533395"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.881061502390836" id="75" x="174.80527103842883" y="363.5073118098511"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.520006987692803" id="76" x="80.42589101958083" y="26.562297956333623"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.9902368910340735" id="77" x="213.33041976094455" y="325.04636964069186"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.192575865136627" id="78" x="430.8299215417371" y="114.13316630112206"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.133765345347599" id="79" x="531.8999732471211" y="90.28050448555678"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.7861224823584045" id="80" x="254.96968950856876" y="263.437337087237"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.2293083453631246" id="81" x="243.15655813002854" y="369.454164303517"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.27249571590781807" id="82" x="87.48106893034196" y="156.3728920884056"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.425151046728201" id="83" x="412.056070712154" y="316.3970945249391"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.4497013997316943" id="84" x="24.902770640431527" y="72.1261142853873"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.603542541175076" id="85" x="190.45476925338517" y="168.51545470710744"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.6357318026762948" id="86" x="290.6732689055102" y="145.88509690307296"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.870122144048704" id="87" x="427.28440996504037" y="48.80601512323915"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="4.258448609222265" id="88" x="120.02808093573503" y="16.573845097210267"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.05166045758370679" id="89" x="9.29425861686127" y="56.316228006290544"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.590170463462652" id="90" x="112.3367233395802" y="233.58090601835534"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.0985028122888392" id="91" x="470.6579262257078" y="185.0889115069167"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.271606902034135" id="92" x="17.964541667449907" y="146.87516052896922"/>
+    </graph>
+  </topology>
+</jbotsim>

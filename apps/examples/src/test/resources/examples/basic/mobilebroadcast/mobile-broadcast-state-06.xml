@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.basic.mobilebroadcast.MobileBroadcastNode" id="default"/>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node direction="3.5402651062283077" id="0" x="129.09741471291954" y="294.8126778639253"/>
+      <node direction="4.439063448022952" id="1" x="231.44422797537698" y="398.0892133550351"/>
+      <node direction="4.427807171118939" id="2" x="520.7657625718584" y="14.444086113686467"/>
+      <node direction="2.5077862080219395" id="3" x="86.88616600099931" y="14.329031163119566"/>
+      <node direction="5.7241067859350405" id="4" x="485.6970531123741" y="214.34835379329434"/>
+      <node direction="2.6604491103569714" id="5" x="365.41552115399793" y="372.2082408896613"/>
+      <node direction="3.2104027386177036" id="6" x="414.615656897774" y="266.84249317079775"/>
+      <node direction="3.657145477390509" id="7" x="584.4418178064716" y="311.0732876212521"/>
+      <node direction="1.7660787653042123" id="8" x="406.53450665566925" y="321.8961595053131"/>
+      <node direction="3.8918051248731373" id="9" x="494.0460317667885" y="217.1023455806885"/>
+      <node direction="2.3215945963314555" id="10" x="78.08570443508847" y="22.00590881290225"/>
+      <node direction="0.5231876394950322" id="11" x="246.56592246529272" y="9.654982867746128"/>
+      <node direction="2.959329567527244" id="12" x="402.3063378379418" y="320.119624273465"/>
+      <node direction="5.034910727309599" id="13" x="116.1443936967371" y="68.35391253308131"/>
+      <node direction="1.3982726626041226" id="14" x="194.3707568801824" y="160.77203046813315"/>
+      <node direction="1.5215314557247843" id="15" x="278.85825596082077" y="317.12091421799494"/>
+      <node direction="0.5363276086171407" id="16" x="360.80944771140264" y="106.56192296589029"/>
+      <node direction="5.303593177648645" id="17" x="546.6182124968523" y="79.76903283616548"/>
+      <node direction="3.5130409091283936" id="18" x="202.83229616160838" y="389.68334191121176"/>
+      <node direction="6.220207384668084" id="19" x="212.29563667047682" y="363.6521599482444"/>
+      <node direction="2.7276859096402615" id="20" x="81.38427514608134" y="129.3950503422875"/>
+      <node direction="4.283487460873605" id="21" x="86.13557794131111" y="116.9389229044607"/>
+    </graph>
+  </topology>
+</jbotsim>

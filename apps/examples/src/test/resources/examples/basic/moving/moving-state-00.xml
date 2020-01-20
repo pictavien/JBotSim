@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.basic.moving.MovingNode" id="default"/>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.2057982526954136" id="0" x="310.85136871775" y="135.29155014473963"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.739722988143111" id="1" x="427.1283621103057" y="83.16815418560827"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.145925511619713" id="2" x="95.79731844866092" y="72.09087866721143"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.7492170698495562" id="3" x="76.78239222846366" y="379.9009285027996"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.7277343654502397" id="4" x="47.2791719079878" y="265.6021129291639"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.052031640389142" id="5" x="220.60898521847776" y="139.119977805075"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.5260565896349227" id="6" x="450.804809333913" y="127.3662664288031"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.4720293892378025" id="7" x="25.768670245352496" y="23.142463457292422"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.331903716922543" id="8" x="401.4734950368962" y="189.3080772283529"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.538653844245776" id="9" x="225.11130429445893" y="165.34725954452642"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.139219763796584" id="10" x="334.5155432309102" y="13.044289239088926"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.452393999432546" id="11" x="34.26842617199691" y="318.9538898270498"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.4380801138538377" id="12" x="357.9896873909888" y="174.54172869549063"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.6121259380930817" id="13" x="243.98395781675595" y="29.259455729995466"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.907304131389386" id="14" x="340.0363279372814" y="274.4856803817329"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.532781031745666" id="15" x="525.2825421146854" y="135.03552386982392"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.618932227376815" id="16" x="99.1027703851421" y="120.17065242898684"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.7952317760108127" id="17" x="387.7539553832712" y="24.84536622992232"/>
+    </graph>
+  </topology>
+</jbotsim>

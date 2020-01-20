@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.basic.icons.MovingNodeDefault" id="default"/>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="5.772703506336733" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="0" x="458.4833117824228" y="31.276401132263345"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="3.2126420339172452" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="1" x="289.133063189056" y="343.01757911057166"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="2.735038411993955" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="2" x="575.0702292661945" y="31.517383648912812"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="2.7035323923412937" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="3" x="21.81425777474317" y="135.544932416934"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="0.5434535824044905" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="4" x="398.459210998549" y="71.8842159117504"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="0.8410593382325391" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="5" x="313.3585136301008" y="98.16617069600869"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="3.0493133362545057" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="6" x="295.4020707441805" y="133.5772300441513"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="4.422656759697872" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="7" x="465.7818665726859" y="330.8801040480307"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="3.831850154340787" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="8" x="508.6828681297584" y="295.01655768876594"/>
+      <node class="examples.basic.icons.MovingNodeBlueOcean" direction="2.096114995391295" icon="/io/jbotsim/ui/icons/circle-blue-ocean-32x32.png" id="9" x="284.61079455442973" y="131.89432017617037"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="2.0020378709571993" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="10" x="586.8436128662765" y="288.57989838723165"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="5.683246540266283" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="11" x="287.8400811534443" y="156.17719714883606"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="2.063112836496351" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="12" x="388.93982644650805" y="190.08982357556852"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="0.41897929241173676" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="13" x="6.886900985986472" y="72.71824327956244"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="2.849455551218147" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="14" x="433.3773056440468" y="42.55795760984921"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="1.7128066039062597" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="15" x="387.64894758263574" y="183.55918035211562"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="1.1027012794350028" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="16" x="133.29719092051744" y="230.5944168420433"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="0.02817088132163485" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="17" x="318.56368160859347" y="301.9651025758253"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="1.6350225272699" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="18" x="67.66096445957999" y="212.53630743887697"/>
+      <node class="examples.basic.icons.MovingNodeBlue" direction="1.7671150337137487" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="19" x="193.88250874119421" y="150.46448912505218"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="5.677657932601459" icon="/io/jbotsim/ui/icons/circle.png" id="20" x="276.37135803912315" y="139.51133489071253"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="2.049926858728476" icon="/io/jbotsim/ui/icons/circle.png" id="21" x="431.1518098600345" y="212.37384472394524"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="5.4922281302176374" icon="/io/jbotsim/ui/icons/circle.png" id="22" x="445.45751554098024" y="26.083521833589316"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="5.825440320361814" icon="/io/jbotsim/ui/icons/circle.png" id="23" x="547.3258046819751" y="200.2265415854763"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="0.604362243553839" icon="/io/jbotsim/ui/icons/circle.png" id="24" x="278.77007650788914" y="257.01940469736064"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="4.383461211447495" icon="/io/jbotsim/ui/icons/circle.png" id="25" x="330.6369518889253" y="374.07091992360165"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="4.599966036001072" icon="/io/jbotsim/ui/icons/circle.png" id="26" x="493.8856787420582" y="202.852358038474"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="5.321422075469444" icon="/io/jbotsim/ui/icons/circle.png" id="27" x="570.9103080730165" y="30.870414428291042"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="5.383092823184411" icon="/io/jbotsim/ui/icons/circle.png" id="28" x="149.9658238849512" y="164.14848919241854"/>
+      <node class="examples.basic.icons.MovingNodeFormer" direction="3.9483066468767256" icon="/io/jbotsim/ui/icons/circle.png" id="29" x="195.41351851535728" y="386.2963907965293"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="2.9296903439846" icon="/io/jbotsim/ui/icons/plus.png" id="30" x="360.9700240049824" y="161.35854169349977"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="5.321981448826197" icon="/io/jbotsim/ui/icons/plus.png" id="31" x="572.5708359770447" y="32.029290936745895"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="3.990747095871492" icon="/io/jbotsim/ui/icons/plus.png" id="32" x="308.5622578277662" y="282.38606028883623"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="2.4352774455462844" icon="/io/jbotsim/ui/icons/plus.png" id="33" x="546.0538897362317" y="149.5065060055856"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="5.339175341163652" icon="/io/jbotsim/ui/icons/plus.png" id="34" x="23.292941024178617" y="68.10179463932172"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="5.882501732064372" icon="/io/jbotsim/ui/icons/plus.png" id="35" x="33.27638735067467" y="388.02672633982274"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="4.736682251963717" icon="/io/jbotsim/ui/icons/plus.png" id="36" x="387.9329933867484" y="181.06814257653843"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="5.791316383714443" icon="/io/jbotsim/ui/icons/plus.png" id="37" x="490.85535099238996" y="90.36783808797509"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="6.1796014716322825" icon="/io/jbotsim/ui/icons/plus.png" id="38" x="300.59676252448367" y="225.69670894210867"/>
+      <node class="examples.basic.icons.MovingNodePlus" direction="1.4603252792299148" icon="/io/jbotsim/ui/icons/plus.png" id="39" x="99.09229105007853" y="197.9334823233885"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="2.081992835928245" icon="/io/jbotsim/ui/icons/transparent.png" id="40" x="329.0194588551942" y="157.21838378132452"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="4.827564894960302" icon="/io/jbotsim/ui/icons/transparent.png" id="41" x="116.01561004589257" y="203.98400835066468"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="5.886531547905903" icon="/io/jbotsim/ui/icons/transparent.png" id="42" x="38.939299022394835" y="1.4706447687899526"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="1.1187779071194925" icon="/io/jbotsim/ui/icons/transparent.png" id="43" x="81.15129972853083" y="256.4337191730692"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="2.9170039648639103" icon="/io/jbotsim/ui/icons/transparent.png" id="44" x="370.9134374050791" y="206.19354606201114"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="4.947613013715042" icon="/io/jbotsim/ui/icons/transparent.png" id="45" x="543.6802961642929" y="279.6870085369169"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="3.835272807775275" icon="/io/jbotsim/ui/icons/transparent.png" id="46" x="516.5883617275581" y="285.47636608978337"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="2.1632798658723287" icon="/io/jbotsim/ui/icons/transparent.png" id="47" x="78.50881735283428" y="2.9940723352319765"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="4.564921237637174" icon="/io/jbotsim/ui/icons/transparent.png" id="48" x="368.0995234773118" y="219.29031013749636"/>
+      <node class="examples.basic.icons.MovingNodeTransparent" color="ff0000ff" direction="4.040242745308411" icon="/io/jbotsim/ui/icons/transparent.png" id="49" x="445.94610773823206" y="167.39677138183993"/>
+      <node direction="4.251810568126075" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="50" x="491.03192007335565" y="157.22006331340708"/>
+      <node direction="4.5806823624691955" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="51" x="424.5992634856566" y="211.35204572515863"/>
+      <node direction="1.7048128823200182" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="52" x="416.31098630407746" y="187.54023503978715"/>
+      <node direction="2.2538595825263448" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="53" x="415.1574532798895" y="207.82736946132036"/>
+      <node direction="0.4563190978876662" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="54" x="549.6036020093425" y="195.14150776955125"/>
+      <node direction="5.415195479927284" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="55" x="239.8292692900974" y="237.82712514678224"/>
+      <node direction="0.5021483904435502" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="56" x="473.1129698631503" y="342.34155104205"/>
+      <node direction="5.933750002684832" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="57" x="101.22962920747352" y="160.6303983874932"/>
+      <node direction="4.186009821810639" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="58" x="281.2904734680002" y="270.0326426458196"/>
+      <node direction="1.3631025867644277" icon="/io/jbotsim/ui/icons/circle-blue-32x32.png" id="59" x="446.4575891772006" y="142.20285522426389"/>
+    </graph>
+  </topology>
+</jbotsim>

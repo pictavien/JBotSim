@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="false">
+    <classes>
+      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.279778637201678" id="0" x="357.9979284380473" y="145.78382117024853"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.82430257590834" id="1" x="147.06761725503884" y="312.86802858152646"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.265273201703151" id="2" x="32.4763797528808" y="233.18820458258574"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.807045044596784" id="3" x="224.9139291458631" y="30.84202836960469"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.026186534552793" id="4" x="31.196248998486112" y="255.4329422534271"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.2179664638662775" id="5" x="183.04067716316104" y="54.7610483769605"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.663713976072123" id="6" x="492.8761108241588" y="106.45999488812879"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.19106678412366906" id="7" x="294.50338708162985" y="111.79657546153555"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.14913043585104782" id="8" x="118.0375320987855" y="305.0424446044344"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.7614880049537499" id="9" x="204.40020218188806" y="262.32972924996966"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.7849616570509412" id="10" x="432.4630386003264" y="233.63555454802395"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.6712865899029672" id="11" x="459.53887651429295" y="42.051832951526194"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.670360798027397" id="12" x="206.75578996047898" y="16.90417279371769"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.382881679501658" id="13" x="507.8298396609821" y="325.2849266914825"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="2.071227200599389" id="14" x="422.71010715073" y="358.2231993446362"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="5.9773608436089125" id="15" x="65.4348600033045" y="113.51462381078045"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="3.560030140698524" id="16" x="272.8001905692133" y="126.93903237844756"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="6.193845749270994" id="17" x="347.57623950905463" y="316.14818848786877"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="0.5384902586466586" id="18" x="85.47875799100075" y="143.08405419450776"/>
+      <node class="examples.basic.mobilebroadcast.MobileBroadcastNode" direction="1.5641979149834417" id="19" x="336.3556159230643" y="126.9922283098274"/>
+      <link directed="true" dst="15" src="5"/>
+      <link directed="true" dst="7" src="15"/>
+      <link directed="true" dst="7" src="2"/>
+      <link directed="true" dst="19" src="18"/>
+      <link directed="true" dst="2" src="1"/>
+      <link directed="true" dst="2" src="3"/>
+      <link directed="true" dst="1" src="9"/>
+      <link directed="true" dst="3" src="5"/>
+      <link directed="true" dst="9" src="6"/>
+      <link directed="true" dst="16" src="19"/>
+      <link directed="true" dst="14" src="11"/>
+      <link directed="true" dst="10" src="17"/>
+      <link directed="true" dst="17" src="7"/>
+      <link directed="true" dst="6" src="8"/>
+      <link directed="true" dst="16" src="7"/>
+    </graph>
+  </topology>
+</jbotsim>
