@@ -22,6 +22,8 @@
 package examples;
 
 public class Random {
+    public static long INITIAL_SEED = 3436575961636972l;
+
     private static java.util.Random prng = new java.util.Random();
 
     public static void setSeed(long seed) {
@@ -32,11 +34,11 @@ public class Random {
         return prng.nextDouble();
     }
 
-    public double nextDouble() {
+    public static double nextDouble() {
         return prng.nextDouble();
     }
 
-    public int nextInt(int bound) {
+    public static int nextInt(int bound) {
         return prng.nextInt(bound);
     }
 }
