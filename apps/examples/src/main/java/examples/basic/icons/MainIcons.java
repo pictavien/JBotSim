@@ -26,6 +26,12 @@ import io.jbotsim.ui.JViewer;
 
 public class MainIcons {
     public static void main(String[] args) {
+        Topology topology = buildTopology();
+        new JViewer(topology);
+        topology.start();
+    }
+
+    public static Topology buildTopology() {
         Topology topology = new Topology();
 
         int nbNodes = 10;
@@ -36,8 +42,7 @@ public class MainIcons {
         deployAtCenter(topology, MovingNodeTransparent.class, nbNodes);
         deployAtCenter(topology, MovingNodeDefault.class, nbNodes);
 
-        new JViewer(topology);
-        topology.start();
+        return topology;
     }
 
     private static void deployAtCenter(Topology tp, Class nodeClass, int nbNodes) {

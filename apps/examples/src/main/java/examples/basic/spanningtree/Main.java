@@ -30,8 +30,17 @@ import io.jbotsim.ui.JViewer;
  * Created by acasteig on 25/08/15.
  */
 public class Main {
+    static int GRID_HEIGHT = 5;
+    static int GRID_WIDTH = 7;
+
     public static void main(String[] args) {
-        final Topology tp = new Topology();
+        final Topology tp = buildTopology();
+        new JViewer(tp);
+        tp.start();
+    }
+
+    public static Topology buildTopology() {
+        Topology tp = new Topology();
         tp.setDefaultNodeModel(SpanningTreeNode.class);
         tp.addStartListener(new StartListener() { // optional
             // reset links upon restart
@@ -43,14 +52,13 @@ public class Main {
             }
         });
         deployNodes(tp); // optional
-        new JViewer(tp);
-        tp.start();
+        return tp;
     }
 
     // Deploy a few nodes to save the user some time
     private static void deployNodes(Topology tp) {
-        for (int i = 0; i < 7; i++){
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < GRID_WIDTH; i++){
+            for (int j = 0; j < GRID_HEIGHT; j++) {
                 tp.addNode(50 + i * 80, 50 + j * 80);
             }
         }

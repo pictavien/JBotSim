@@ -29,10 +29,15 @@ import io.jbotsim.ui.JViewer;
  */
 public class Main {
     public static void main(String[] args) {
-        Topology tp = new Topology();
-        tp.setDefaultNodeModel(MobileBroadcastNode.class);
+        Topology tp = buildTopology();
         new JViewer(tp);
         tp.start();
         tp.pause();
+    }
+
+    public static Topology buildTopology() {
+        Topology tp = new Topology();
+        tp.setDefaultNodeModel(MobileBroadcastNode.class);
+        return tp;
     }
 }

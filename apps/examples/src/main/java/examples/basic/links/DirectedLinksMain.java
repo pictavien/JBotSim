@@ -21,6 +21,7 @@
 
 package examples.basic.links;
 
+import examples.Random;
 import examples.basic.mobilebroadcast.MobileBroadcastNode;
 import io.jbotsim.core.Link;
 import io.jbotsim.core.Node;
@@ -33,11 +34,19 @@ import io.jbotsim.ui.painting.JDirectedLinkPainter;
  * The result is displayed with a JViewer.
  */
 public class DirectedLinksMain {
+    private static Random rnd = new Random();
 
     public static final int MAX_NODE_ID = 20;
     protected static final int NB_LINKS = 15;
 
     public static void main(String[] args) {
+        Topology tp = buildTopology();
+        JViewer viewer = new JViewer(tp);
+        viewer.getJTopology().setDefaultLinkPainter(new JDirectedLinkPainter());
+        tp.start();
+    }
+
+    public static Topology buildTopology() {
         Topology tp = new Topology();
 
         tp.setOrientation(Link.Orientation.DIRECTED);
@@ -47,10 +56,7 @@ public class DirectedLinksMain {
 
         addRandomDirectedLinks(tp, NB_LINKS, MAX_NODE_ID);
 
-        JViewer viewer = new JViewer(tp);
-        viewer.getJTopology().setDefaultLinkPainter(new JDirectedLinkPainter());
-        tp.start();
-
+        return tp;
     }
 
     /**
@@ -63,7 +69,9 @@ public class DirectedLinksMain {
         for (int i = 0; i < maxNodeId; i++){
             Node node = new MobileBroadcastNode();
             node.setID(i);
-            tp.addNode(-1, -1, node);
+            node.setLocation(rnd.nextInt(tp.getWidth()),
+                             rnd.nextInt(tp.getHeight()));
+            tp.addNode(node);
         }
     }
 
@@ -101,7 +109,7 @@ public class DirectedLinksMain {
     }
 
     private static Node pickRandomNode(Topology tp, int maxNodeId) {
-        int randomIndex = (int) (Math.random() * maxNodeId);
+        int randomIndex = rnd.nextInt(maxNodeId);
         for(Node n : tp.getNodes())
             if(n.getID() == randomIndex)
                 return n;

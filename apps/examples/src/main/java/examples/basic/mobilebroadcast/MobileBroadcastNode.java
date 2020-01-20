@@ -21,6 +21,7 @@
 
 package examples.basic.mobilebroadcast;
 
+import examples.Random;
 import io.jbotsim.core.Color;
 import io.jbotsim.core.Message;
 import io.jbotsim.core.Node;
@@ -36,7 +37,7 @@ public class MobileBroadcastNode extends Node{
 
     @Override
     public void onStart() {
-        setDirection(Math.PI * 2 * Math.random());
+        setDirection(Math.PI * 2 * Random.random());
         informed = false;
         setColor(null); // optional (for restart only)
     }

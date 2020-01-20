@@ -21,13 +21,15 @@
 
 package examples.basic.icons;
 
+import examples.Random;
 import examples.basic.moving.MovingNode;
 
 public class RandomMovingNode extends MovingNode {
+    private static Random rnd = new Random();
+
     @Override
     public void onStart() {
         super.onStart();
-        setDirection(Math.random()*2*Math.PI);
+        setDirection(rnd.nextDouble()*2*Math.PI);
     }
-
 }
