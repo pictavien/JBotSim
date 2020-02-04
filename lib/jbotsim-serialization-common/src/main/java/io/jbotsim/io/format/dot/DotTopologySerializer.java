@@ -124,30 +124,30 @@ public class DotTopologySerializer implements TopologySerializer {
             out.println("];");
         }
 
-        for (int i = 0; i < 2; i++) {
-            List<Link> links = topology.getLinks(Link.Orientation.DIRECTED);
-            for (Link l : links) {
-                int src = 0;
-                if (!l.isDirected() && l.endpoint(1).getID() < l.endpoint(0).getID())
-                    src = 1;
-                out.print(l.endpoint(src).getID());
-                out.print(edgeOp);
-                out.print(l.endpoint((src + 1) % 2));
-                out.print(" [");
-                Integer w = l.getWidth();
-                if (w.equals(Link.DEFAULT_WIDTH)) {
-                    out.print("width = \"" + w + "\", ");
-                }
-                Color c = l.getColor();
-                if (!Link.DEFAULT_COLOR.equals(c)) {
-                    out.print("color = \"" + getStringForColor(c) + "\", ");
-                }
-                out.print(JBOTSIM_ATTR_IS_WIRELESS + " = \"" + (l.isWireless() ? 1 : 0) + "\", ");
-                out.print(JBOTSIM_ATTR_IS_DIRECTED + " = \"" + (l.isDirected() ? 1 : 0) + "\", ");
-                out.print("style = \"" + (l.isWireless() ? "dashed" : "solid") + "\"");
-                out.println("];");
+
+
+        for (Link l : topology.getLinks()) {
+            int src = 0;
+            if (!l.isDirected() && l.endpoint(1).getID() < l.endpoint(0).getID())
+                src = 1;
+            out.print(l.endpoint(src).getID());
+            out.print(edgeOp);
+            out.print(l.endpoint((src + 1) % 2).getID());
+            out.print(" [");
+            Integer w = l.getWidth();
+            if (w.equals(Link.DEFAULT_WIDTH)) {
+                out.print("width = \"" + w + "\", ");
             }
+            Color c = l.getColor();
+            if (!Link.DEFAULT_COLOR.equals(c)) {
+                out.print("color = \"" + getStringForColor(c) + "\", ");
+            }
+            out.print(JBOTSIM_ATTR_IS_WIRELESS + " = \"" + (l.isWireless() ? 1 : 0) + "\", ");
+            out.print(JBOTSIM_ATTR_IS_DIRECTED + " = \"" + (l.isDirected() ? 1 : 0) + "\", ");
+            out.print("style = \"" + (l.isWireless() ? "dashed" : "solid") + "\"");
+            out.println("];");
         }
+
         out.println('}');
         out.flush();
         if (resume)
