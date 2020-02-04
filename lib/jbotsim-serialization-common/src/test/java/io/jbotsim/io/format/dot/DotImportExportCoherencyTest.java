@@ -23,6 +23,7 @@ package io.jbotsim.io.format.dot;
 
 import io.jbotsim.core.Link;
 import io.jbotsim.core.Node;
+import io.jbotsim.core.Point;
 import io.jbotsim.core.Topology;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,8 +31,7 @@ import org.junit.runners.Parameterized;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
 public class DotImportExportCoherencyTest {
@@ -74,16 +74,18 @@ public class DotImportExportCoherencyTest {
         return result;
     }
 
-    private Topology buildRandomTopology(int nbNodes, Random rnd) throws InstantiationException, IllegalAccessException {
+    private Topology buildRandomTopology(int nbNodes, Random rnd,
+                                         Link.Orientation orientation)
+            throws InstantiationException, IllegalAccessException {
         Topology tp = new Topology();
+        tp.setOrientation(orientation);
+
         for (int i = 0; i < nbNodes; i++)
             tp.addNode(buildRandomNode(rnd, tp));
 
         Node[] nodes = tp.getNodes().toArray(new Node[0]);
 
         if (nbNodes == 1) {
-            Link.Orientation orientation = rnd.nextBoolean()
-                    ? Link.Orientation.DIRECTED : Link.Orientation.UNDIRECTED;
             tp.getLink(nodes[0], nodes[0], orientation);
         } else {
             for (int src = 0; src < nbNodes; src++) {
@@ -99,18 +101,23 @@ public class DotImportExportCoherencyTest {
                     if (srcNode.getCommonLinkWith(dstNode) == null &&
                             srcNode.getOutLinkTo(dstNode) == null &&
                             dstNode.getOutLinkTo(srcNode) == null) {
-                        Link.Orientation orientation = rnd.nextBoolean()
-                                ? Link.Orientation.DIRECTED
-                                : Link.Orientation.UNDIRECTED;
                         tp.addLink(new Link(srcNode, dstNode, orientation));
                     } else if (dstNode.getOutLinkTo(dstNode) != null) {
-                        tp.addLink(new Link(srcNode, dstNode, Link.Orientation.DIRECTED));
+                        tp.addLink(new Link(srcNode, dstNode,
+                                Link.Orientation.DIRECTED));
                     }
                 }
             }
         }
 
         return tp;
+    }
+
+    private Topology buildRandomTopology(int nbNodes, Random rnd)
+            throws InstantiationException, IllegalAccessException {
+        Link.Orientation orientation = rnd.nextBoolean()
+                ? Link.Orientation.DIRECTED : Link.Orientation.UNDIRECTED;
+        return buildRandomTopology(nbNodes, rnd, orientation);
     }
 
     public void checkTopologyGraph(Topology tp1, Topology tp2) {
@@ -171,4 +178,83 @@ public class DotImportExportCoherencyTest {
             runTest(i, rnd);
         runTest(1 + maxSmallSize + rnd.nextInt(MAX_NUMBER_OF_NODES - maxSmallSize), rnd);
     }
+
+    /**
+     * Test that serialization fails if one add directed links in an
+     * undirected Topology with out ensuring both ways arcs.
+     *
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    @Test
+    public void importExportFailureOnMixedOrientationTest() throws IllegalAccessException, InstantiationException {
+        Random rnd = new Random(prngSeeds);
+        DotTopologySerializer dotIO = new DotTopologySerializer(false);
+        Topology tp1 = buildRandomTopology(MAX_NUMBER_OF_NODES, rnd, Link.Orientation.UNDIRECTED);
+        List<Node> nodes = tp1.getNodes();
+        Node src = nodes.get(rnd.nextInt(nodes.size()));
+        Node tgt = new Node();
+        tp1.addNode(tgt);
+
+        /* First we add a directed link in one way.
+         * Serialization should fail
+         */
+        tp1.addLink(new Link(src, tgt, Link.Orientation.DIRECTED));
+        String s1 = dotIO.exportToString(tp1);
+
+        Topology tp2 = new Topology();
+        dotIO.importFromString(tp2, s1);
+        String s2 = dotIO.exportToString(tp2);
+        assertEquals(reorderLines(s1), reorderLines(s2));
+        assertEquals(tp1.getNodes().size(), tp2.getNodes().size());
+        assertEquals(tp1.getLinks(Link.Orientation.UNDIRECTED).size(),
+                tp2.getLinks(Link.Orientation.UNDIRECTED).size());
+        /* Here is the error ! */
+        assertNotEquals(tp1.getLinks(Link.Orientation.DIRECTED).size(),
+                tp2.getLinks(Link.Orientation.DIRECTED).size());
+
+        /* Second, we add an arc in the other way. The Topology should be,
+         * now, a coherent undirected topology.
+         */
+        tp1.addLink(new Link(tgt, src, Link.Orientation.DIRECTED));
+        s1 = dotIO.exportToString(tp1);
+        tp2 = new Topology();
+        dotIO.importFromString(tp2, s1);
+        s2 = dotIO.exportToString(tp2);
+        assertEquals(reorderLines(s1), reorderLines(s2));
+        assertEquals(tp1.getNodes().size(), tp2.getNodes().size());
+        assertEquals(tp1.getLinks(Link.Orientation.UNDIRECTED).size(),
+                tp2.getLinks(Link.Orientation.UNDIRECTED).size());
+        assertEquals(tp1.getLinks(Link.Orientation.DIRECTED).size(),
+                tp2.getLinks(Link.Orientation.DIRECTED).size());
+    }
+
+    /*
+    @Test
+    public void importExportWirelessTest() throws IllegalAccessException, InstantiationException {
+        Random rnd = new Random(prngSeeds);
+        DotTopologySerializer dotIO = new DotTopologySerializer(false);
+        Topology tp1 = new Topology();
+        tp1.enableWireless();
+        Node src = new Node();
+        Node tgt = new Node();
+        tp1.addNode(src);
+
+        Point loc = src.getLocation();
+        loc.setLocation(loc.x, loc.getY() + tp1.getCommunicationRange() / 2);
+        tp1.addNode(tgt);
+        tp1.addLink(new Link(src, tgt, Link.Orientation.UNDIRECTED, Link.Mode.WIRED));
+
+        assertEquals(1, tp1.getLinks().size());
+
+        tgt.setLocation(loc);
+        assertEquals(2, tp1.getLinks().size());
+
+        String s1 = dotIO.exportToString(tp1);
+
+        Topology tp2 = new Topology();
+        dotIO.importFromString(tp2, s1);
+        String s2 = dotIO.exportToString(tp2);
+        assertEquals(reorderLines(s1), reorderLines(s2));
+    }*/
 }
