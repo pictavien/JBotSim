@@ -158,7 +158,7 @@ public class DotTopologySerializer implements TopologySerializer {
     private void makeTopologyFromGraph(DotGraph graph, Topology tp) {
         HashMap<DotNode, Node> nodeTable = new HashMap<>();
         boolean enableWireless = false;
-
+        tp.setOrientation(graph.isDirected() ? Link.Orientation.DIRECTED : Link.Orientation.UNDIRECTED);
         for (DotNode dn : graph.getAllNodes()) {
             Node node;
             String className = dn.getAttribute(JBOTSIM_ATTR_NODE_CLASS);
