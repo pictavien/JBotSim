@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <message-engine class="io.jbotsim.core.DefaultMessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node id="0" x="338.29399153799045" y="281.44673235979644"/>
+      <node id="1" x="391.8860312217612" y="353.7509043178041"/>
+      <node id="2" x="320.16684955582275" y="299.37849420782163"/>
+      <node id="3" x="324.32572852826803" y="389.28235244367573"/>
+      <node id="4" x="343.13377789569125" y="301.2695279293325"/>
+      <node id="5" x="389.54457466608517" y="378.38008455510976"/>
+      <node id="6" x="372.74143218228795" y="466.79758510035936"/>
+      <node id="7" x="364.392246490232" y="556.40947660076"/>
+      <node id="8" x="351.3348640894782" y="467.3617098413376"/>
+      <node id="9" x="332.23631347009916" y="379.411466156405"/>
+      <node id="10" x="404.23582562031174" y="433.41211661666705"/>
+      <node id="11" x="315.6010268314306" y="417.7957007777315"/>
+      <node id="12" x="402.3369445247567" y="393.777362327777"/>
+      <node id="13" x="483.84411323176676" y="355.612175974675"/>
+      <node id="14" x="505.85385248892646" y="442.8794171240997"/>
+      <node id="15" x="416.0184472922557" y="448.3200028600278"/>
+      <node id="16" x="360.9313485031853" y="519.4917075396488"/>
+      <node id="17" x="415.8886014188422" y="590.7637241518124"/>
+    </graph>
+  </topology>
+</jbotsim>

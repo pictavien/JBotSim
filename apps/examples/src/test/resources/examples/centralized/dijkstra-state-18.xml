@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <message-engine class="io.jbotsim.core.DefaultMessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node id="0" x="380.7045840861863" y="160.1657169328267"/>
+      <node id="1" x="300.8052165334646" y="118.739987432007"/>
+      <node id="2" x="282.9233724524309" y="206.94565421289812"/>
+      <node id="3" x="222.4405527238142" y="140.29860988476867"/>
+      <node id="4" x="261.9135399039002" y="221.18051937682236"/>
+      <node id="5" x="203.01238372242997" y="153.13161196100816"/>
+    </graph>
+  </topology>
+</jbotsim>
