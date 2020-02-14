@@ -36,7 +36,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DijkstraTest extends ExampleTestHelper {
-    static boolean GENERATE_EXPECTED_RESULT = false;
     static int MIN_NB_NODES = 1;
     static int MAX_NB_NODES = 40;
 
@@ -47,17 +46,13 @@ class DijkstraTest extends ExampleTestHelper {
 
     @ParameterizedTest
     @MethodSource("provideSeeds")
-    public void checkStates(long seed, String expectedResult)
+    public void checkStates(long seed)
             throws Exception {
-
         prepareTopology(seed);
         int nbNodes = MIN_NB_NODES + Random.nextInt(MAX_NB_NODES - MIN_NB_NODES);
         deployTopology(testedTopology, nbNodes);
         testedTopology.selectNode(pickRandomNode());
-        if (GENERATE_EXPECTED_RESULT)
-            generateExpectedFile(expectedResult);
-        checkProperties(testedTopology);
-        checkTopologyAgainstXMLFile(expectedResult);
+          checkProperties(testedTopology);
     }
 
     private void checkProperties(Topology tp) {
@@ -103,36 +98,36 @@ class DijkstraTest extends ExampleTestHelper {
     // region Seeds
     private static Stream<Arguments> provideSeeds() {
         return Stream.of(
-                Arguments.of(   54649622L, "dijkstra-state-00.xml"),
-                Arguments.of(   29963404L, "dijkstra-state-01.xml"),
-                Arguments.of(   23926647L, "dijkstra-state-02.xml"),
-                Arguments.of( 1823426971L, "dijkstra-state-03.xml"),
-                Arguments.of( 1498520659L, "dijkstra-state-04.xml"),
-                Arguments.of( 2606923371L, "dijkstra-state-05.xml"),
-                Arguments.of( 3060314622L, "dijkstra-state-06.xml"),
-                Arguments.of( 3050016382L, "dijkstra-state-07.xml"),
-                Arguments.of( 1589221107L, "dijkstra-state-08.xml"),
-                Arguments.of( 1520132333L, "dijkstra-state-09.xml"),
-                Arguments.of(  308248611L, "dijkstra-state-10.xml"),
-                Arguments.of(  294984020L, "dijkstra-state-11.xml"),
-                Arguments.of(  578314305L, "dijkstra-state-12.xml"),
-                Arguments.of( 2084826558L, "dijkstra-state-13.xml"),
-                Arguments.of(  326345610L, "dijkstra-state-14.xml"),
-                Arguments.of( 2718626159L, "dijkstra-state-15.xml"),
-                Arguments.of(  548330741L, "dijkstra-state-16.xml"),
-                Arguments.of( 1541516371L, "dijkstra-state-17.xml"),
-                Arguments.of( 1914322302L, "dijkstra-state-18.xml"),
-                Arguments.of(  121902761L, "dijkstra-state-19.xml"),
-                Arguments.of(   54910674L, "dijkstra-state-20.xml"),
-                Arguments.of(  986122447L, "dijkstra-state-21.xml"),
-                Arguments.of( 1390712986L, "dijkstra-state-22.xml"),
-                Arguments.of(  315952060L, "dijkstra-state-23.xml"),
-                Arguments.of(  974926728L, "dijkstra-state-24.xml"),
-                Arguments.of(  237418848L, "dijkstra-state-25.xml"),
-                Arguments.of( 3266816386L, "dijkstra-state-26.xml"),
-                Arguments.of(  649925900L, "dijkstra-state-27.xml"),
-                Arguments.of( 1837627249L, "dijkstra-state-28.xml"),
-                Arguments.of( 2125019424L, "dijkstra-state-29.xml")
+                Arguments.of(927120188L),
+                Arguments.of(2586211009L),
+                Arguments.of(3006414085L),
+                Arguments.of(149314093L),
+                Arguments.of(3038723760L),
+                Arguments.of(67139927L),
+                Arguments.of(194124366L),
+                Arguments.of(290511497L),
+                Arguments.of(646229232L),
+                Arguments.of(262129828L),
+                Arguments.of(580828517L),
+                Arguments.of(383211965L),
+                Arguments.of(14964087L),
+                Arguments.of(782516455L),
+                Arguments.of(1160711396L),
+                Arguments.of(94919108L),
+                Arguments.of(192137869L),
+                Arguments.of(261433355L),
+                Arguments.of(100908385L),
+                Arguments.of(2784322904L),
+                Arguments.of(446717975L),
+                Arguments.of(222066278L),
+                Arguments.of(399027438L),
+                Arguments.of(140776733L),
+                Arguments.of(2078313492L),
+                Arguments.of(1604711788L),
+                Arguments.of(1147832568L),
+                Arguments.of(1700315861L),
+                Arguments.of(1419122176L),
+                Arguments.of(2614527307L)
         );
     }
     // endregion Seeds
