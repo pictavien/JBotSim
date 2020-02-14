@@ -77,10 +77,14 @@ public class DominatingSet extends Node{
 		return nbDom;		
 	}
 
-
-	public static void main(String args[]){
+	public static Topology buildTopology() {
 		Topology tp = new Topology();
 		tp.setDefaultNodeModel(DominatingSet.class);
+		return tp;
+	}
+
+	public static void main(String args[]){
+		Topology tp = buildTopology();
 		new JViewer(tp);
 	}
 }

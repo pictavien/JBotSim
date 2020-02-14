@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <node-class class="examples.centralized.DominatingSet" id="default"/>
+      <message-engine class="io.jbotsim.core.DefaultMessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node color="ffffffff" id="0" x="72.0" y="181.0"/>
+      <node color="ffffffff" id="1" x="469.0" y="315.0"/>
+      <node color="ffffffff" id="2" x="294.0" y="360.0"/>
+      <node color="ffffffff" id="3" x="448.0" y="234.0"/>
+      <node color="ff000000" id="4" x="35.0" y="102.0"/>
+      <node color="ffffffff" id="5" x="424.0" y="292.0"/>
+      <node color="ff000000" id="6" x="354.0" y="196.0"/>
+      <node color="ffffffff" id="7" x="253.0" y="337.0"/>
+      <node color="ffffffff" id="8" x="345.0" y="276.0"/>
+      <node color="ff000000" id="9" x="596.0" y="102.0"/>
+      <node color="ff000000" id="10" x="490.0" y="120.0"/>
+      <node color="ff000000" id="11" x="304.0" y="355.0"/>
+      <node color="ff000000" id="12" x="484.0" y="324.0"/>
+      <node color="ff000000" id="13" x="585.0" y="329.0"/>
+      <node color="ffffffff" id="14" x="570.0" y="274.0"/>
+      <node color="ff000000" id="15" x="228.0" y="217.0"/>
+      <node color="ffffffff" id="16" x="40.0" y="47.0"/>
+      <node color="ff000000" id="17" x="447.0" y="24.0"/>
+      <node color="ffffffff" id="18" x="182.0" y="66.0"/>
+      <node color="ff000000" id="19" x="159.0" y="46.0"/>
+    </graph>
+  </topology>
+</jbotsim>
