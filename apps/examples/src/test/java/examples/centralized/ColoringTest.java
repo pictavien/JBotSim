@@ -37,39 +37,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class ColoringTest extends ExampleTestHelper {
     static int MIN_NB_NODES = 10;
     static int MAX_NB_NODES = 40;
+    static boolean GENERATE_EXPECTED_RESULT = false;
 
     @Override
     protected Class getTestedClass() {
         return Coloring.class;
     }
 
-    private static Stream<Arguments> provideSeeds() {
-        return Stream.of(
-                Arguments.of(2849427948l, "coloring-state-00.xml"),
-                Arguments.of(2898812548l, "coloring-state-01.xml"),
-                Arguments.of(2944125432l, "coloring-state-02.xml"),
-                Arguments.of(3071718520l, "coloring-state-03.xml"),
-                Arguments.of(1130910306l, "coloring-state-04.xml"),
-                Arguments.of(1781528851l, "coloring-state-05.xml"),
-                Arguments.of(1562627007l, "coloring-state-06.xml"),
-                Arguments.of(135134899l, "coloring-state-07.xml"),
-                Arguments.of(464510212l, "coloring-state-08.xml"),
-                Arguments.of(3126921024l, "coloring-state-09.xml"),
-                Arguments.of(2019115918l, "coloring-state-10.xml"),
-                Arguments.of(3048720313l, "coloring-state-11.xml"),
-                Arguments.of(2379611612l, "coloring-state-12.xml"),
-                Arguments.of(2655014896l, "coloring-state-13.xml")        );
-    }
-
     @ParameterizedTest
     @MethodSource("provideSeeds")
     public void checkStates(long seed, String expectedResult)
             throws Exception {
-        boolean generateExpectedResult = false;
         prepareTopology(seed);
         int nbNodes = MIN_NB_NODES + Random.nextInt(MAX_NB_NODES - MIN_NB_NODES);
         deployRandomNodes(testedTopology, nbNodes);
-        if(generateExpectedResult)
+        if(GENERATE_EXPECTED_RESULT)
             generateExpectedFile(expectedResult);
         checkColoring(testedTopology);
         checkTopologyAgainstXMLFile(expectedResult);
@@ -91,4 +73,41 @@ class ColoringTest extends ExampleTestHelper {
             tp.addNode(node);
         }
     }
+
+    // region Seeds
+    private static Stream<Arguments> provideSeeds() {
+        return Stream.of(
+                Arguments.of( 2272216199l, "coloring-state-00.xml"),
+                Arguments.of(  724428213l, "coloring-state-01.xml"),
+                Arguments.of(  327233330l, "coloring-state-02.xml"),
+                Arguments.of(  145613112l, "coloring-state-03.xml"),
+                Arguments.of(  304647057l, "coloring-state-04.xml"),
+                Arguments.of( 2904026419l, "coloring-state-05.xml"),
+                Arguments.of( 1164224934l, "coloring-state-06.xml"),
+                Arguments.of(  920622943l, "coloring-state-07.xml"),
+                Arguments.of(  266418708l, "coloring-state-08.xml"),
+                Arguments.of( 1426718294l, "coloring-state-09.xml"),
+                Arguments.of( 2214612478l, "coloring-state-10.xml"),
+                Arguments.of( 1799822989l, "coloring-state-11.xml"),
+                Arguments.of(  907129761l, "coloring-state-12.xml"),
+                Arguments.of(  225968916l, "coloring-state-13.xml"),
+                Arguments.of( 1967928193l, "coloring-state-14.xml"),
+                Arguments.of( 1271930367l, "coloring-state-15.xml"),
+                Arguments.of(  285206964l, "coloring-state-16.xml"),
+                Arguments.of(  272321201l, "coloring-state-17.xml"),
+                Arguments.of( 2896219729l, "coloring-state-18.xml"),
+                Arguments.of( 1993332333l, "coloring-state-19.xml"),
+                Arguments.of(  307215942l, "coloring-state-20.xml"),
+                Arguments.of( 1616121885l, "coloring-state-21.xml"),
+                Arguments.of( 2712525339l, "coloring-state-22.xml"),
+                Arguments.of(  719024799l, "coloring-state-23.xml"),
+                Arguments.of( 2118722074l, "coloring-state-24.xml"),
+                Arguments.of( 2376328722l, "coloring-state-25.xml"),
+                Arguments.of( 1936130908l, "coloring-state-26.xml"),
+                Arguments.of(  272857588l, "coloring-state-27.xml"),
+                Arguments.of( 1653217506l, "coloring-state-28.xml"),
+                Arguments.of( 2726326585l, "coloring-state-29.xml")
+        );
+    }
+    // endregion Seeds
 }

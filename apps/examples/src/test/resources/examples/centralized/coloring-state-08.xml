@@ -8,38 +8,19 @@
       <clock-class class="examples.IterableClock" id="default"/>
     </classes>
     <graph>
-      <node color="ffffafaf" id="0" x="113.0" y="358.0"/>
-      <node color="ffffc800" id="1" x="153.0" y="368.0"/>
-      <node color="ffffafaf" id="2" x="324.0" y="297.0"/>
-      <node color="ffffafaf" id="3" x="488.0" y="136.0"/>
-      <node color="ffffafaf" id="4" x="399.0" y="44.0"/>
-      <node color="ff00ff00" id="5" x="146.0" y="363.0"/>
-      <node color="ffffc800" id="6" x="21.0" y="321.0"/>
-      <node color="ffffafaf" id="7" x="590.0" y="192.0"/>
-      <node color="ffffc800" id="8" x="315.0" y="362.0"/>
-      <node color="ffffafaf" id="9" x="181.0" y="24.0"/>
-      <node color="ffffafaf" id="10" x="320.0" y="113.0"/>
-      <node color="ffffc800" id="11" x="164.0" y="15.0"/>
-      <node color="ffffc800" id="12" x="284.0" y="60.0"/>
-      <node color="ffffc800" id="13" x="526.0" y="59.0"/>
-      <node color="ffffafaf" id="14" x="513.0" y="355.0"/>
-      <node color="ffffffff" id="15" x="199.0" y="386.0"/>
-      <node color="ff00ff00" id="16" x="274.0" y="53.0"/>
-      <node color="ffffc800" id="17" x="516.0" y="339.0"/>
-      <node color="ff00ff00" id="18" x="316.0" y="310.0"/>
-      <node color="ffffffff" id="19" x="269.0" y="24.0"/>
-      <node color="ffffafaf" id="20" x="110.0" y="102.0"/>
-      <node color="ff00ff00" id="21" x="462.0" y="122.0"/>
-      <node color="ffffafaf" id="22" x="400.0" y="189.0"/>
-      <node color="ffffafaf" id="23" x="5.0" y="266.0"/>
-      <node color="ffffc800" id="24" x="87.0" y="236.0"/>
-      <node color="ffffafaf" id="25" x="179.0" y="177.0"/>
-      <node color="ffffc800" id="26" x="404.0" y="111.0"/>
-      <node color="ffffffff" id="27" x="372.0" y="329.0"/>
-      <node color="ffffffff" id="28" x="385.0" y="162.0"/>
-      <node color="ff00ff00" id="29" x="504.0" y="393.0"/>
-      <node color="ffffffff" id="30" x="481.0" y="370.0"/>
-      <node color="ff00ff00" id="31" x="48.0" y="298.0"/>
+      <node color="ffffc800" id="0" x="413.0" y="336.0"/>
+      <node color="ffffc800" id="1" x="534.0" y="67.0"/>
+      <node color="ffffc800" id="2" x="435.0" y="116.0"/>
+      <node color="ffffffff" id="3" x="368.0" y="68.0"/>
+      <node color="ffffc800" id="4" x="50.0" y="157.0"/>
+      <node color="ffffc800" id="5" x="240.0" y="137.0"/>
+      <node color="ff000000" id="6" x="273.0" y="92.0"/>
+      <node color="ffffffff" id="7" x="273.0" y="202.0"/>
+      <node color="ffffc800" id="8" x="74.0" y="260.0"/>
+      <node color="ffffc800" id="9" x="134.0" y="44.0"/>
+      <node color="ffffffff" id="10" x="541.0" y="145.0"/>
+      <node color="ffffffff" id="11" x="395.0" y="284.0"/>
+      <node id="12" x="202.0" y="277.0"/>
     </graph>
   </topology>
 </jbotsim>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbotsim version="1.0">
+  <topology speed="10" wireless-enabled="true">
+    <classes>
+      <message-engine class="io.jbotsim.core.DefaultMessageEngine" id="default"/>
+      <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
+      <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
+      <clock-class class="examples.IterableClock" id="default"/>
+    </classes>
+    <graph>
+      <node color="ff00ff00" id="0" x="470.0" y="322.0"/>
+      <node color="ff00ff00" id="1" x="579.0" y="213.0"/>
+      <node color="ff00ff00" id="2" x="85.0" y="141.0"/>
+      <node color="ff00ff00" id="3" x="178.0" y="236.0"/>
+      <node color="ff00ff00" id="4" x="384.0" y="144.0"/>
+      <node color="ff00ff00" id="5" x="568.0" y="347.0"/>
+      <node color="ffffffff" id="6" x="133.0" y="265.0"/>
+      <node color="ff00ff00" id="7" x="98.0" y="318.0"/>
+      <node color="ffffc800" id="8" x="181.0" y="335.0"/>
+      <node color="ffffffff" id="9" x="590.0" y="265.0"/>
+      <node color="ffffffff" id="10" x="23.0" y="178.0"/>
+      <node color="ff00ff00" id="11" x="366.0" y="349.0"/>
+      <node color="ffffffff" id="12" x="41.0" y="307.0"/>
+      <node color="ffffffff" id="13" x="68.0" y="71.0"/>
+      <node color="ffffc800" id="14" x="80.0" y="281.0"/>
+      <node color="ffff0000" id="15" x="201.0" y="296.0"/>
+      <node color="ffffffff" id="16" x="220.0" y="177.0"/>
+      <node color="ffffffff" id="17" x="331.0" y="286.0"/>
+      <node color="ff00ff00" id="18" x="288.0" y="112.0"/>
+      <node color="ffffffff" id="19" x="209.0" y="66.0"/>
+      <node color="ffff0000" id="20" x="130.0" y="220.0"/>
+      <node color="ff00ff00" id="21" x="8.0" y="232.0"/>
+      <node color="ffffffff" id="22" x="513.0" y="345.0"/>
+      <node color="ffffc800" id="23" x="527.0" y="324.0"/>
+      <node color="ffff0000" id="24" x="488.0" y="358.0"/>
+      <node color="ffffffff" id="25" x="565.0" y="114.0"/>
+      <node color="ffffffff" id="26" x="380.0" y="374.0"/>
+      <node color="ffffc800" id="27" x="250.0" y="60.0"/>
+      <node color="ffff0000" id="28" x="535.0" y="238.0"/>
+    </graph>
+  </topology>
+</jbotsim>
