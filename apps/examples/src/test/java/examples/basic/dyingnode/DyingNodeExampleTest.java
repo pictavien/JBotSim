@@ -41,20 +41,20 @@ public class DyingNodeExampleTest extends ExampleTestHelper {
 
     private static Stream<Arguments> provideSeedsAndRounds() {
         return Stream.of(
-                Arguments.of(123456789l, 4149),
-                Arguments.of(3141596l, 1646),
-                Arguments.of(99991111l, 1485),
-                Arguments.of(224183818l, 1157),
-                Arguments.of(2703814402l, 3620),
-                Arguments.of(788128408l, 1548),
-                Arguments.of(258725349l, 1897),
-                Arguments.of(2246624749l, 4695),
-                Arguments.of(1368222688l, 2893),
-                Arguments.of(1220010590l, 1188),
-                Arguments.of(172056694l, 1229),
-                Arguments.of(1631323957l, 1389),
-                Arguments.of(1708810312l, 1376),
-                Arguments.of(780532665l, 4707)
+                Arguments.of(123456789L, 4149),
+                Arguments.of(3141596L, 1646),
+                Arguments.of(99991111L, 1485),
+                Arguments.of(224183818L, 1157),
+                Arguments.of(2703814402L, 3620),
+                Arguments.of(788128408L, 1548),
+                Arguments.of(258725349L, 1897),
+                Arguments.of(2246624749L, 4695),
+                Arguments.of(1368222688L, 2893),
+                Arguments.of(1220010590L, 1188),
+                Arguments.of(172056694L, 1229),
+                Arguments.of(1631323957L, 1389),
+                Arguments.of(1708810312L, 1376),
+                Arguments.of(780532665L, 4707)
         );
     }
 

@@ -41,20 +41,20 @@ public class DirectedLinksTest extends ExampleTestHelper {
 
     private static Stream<Arguments> provideSeedsAndRounds() {
         return Stream.of(
-                Arguments.of(275662412l, 6461, "directed-links-state-00.xml"),
-                Arguments.of(3066721431l, 4632, "directed-links-state-01.xml"),
-                Arguments.of(2315217891l, 3792, "directed-links-state-02.xml"),
-                Arguments.of(314986383l, 4071, "directed-links-state-03.xml"),
-                Arguments.of(508225197l, 6615, "directed-links-state-04.xml"),
-                Arguments.of(203698725l, 6234, "directed-links-state-05.xml"),
-                Arguments.of(1317213446l, 5230, "directed-links-state-06.xml"),
-                Arguments.of(2296516590l, 4025, "directed-links-state-07.xml"),
-                Arguments.of(159154406l, 1674, "directed-links-state-08.xml"),
-                Arguments.of(881115604l, 677, "directed-links-state-09.xml"),
-                Arguments.of(190005456l, 620, "directed-links-state-10.xml"),
-                Arguments.of(613910246l, 487, "directed-links-state-11.xml"),
-                Arguments.of(202041725l, 6106, "directed-links-state-12.xml"),
-                Arguments.of(714627694l, 357, "directed-links-state-13.xml")
+                Arguments.of(275662412L, 6461, "directed-links-state-00.xml"),
+                Arguments.of(3066721431L, 4632, "directed-links-state-01.xml"),
+                Arguments.of(2315217891L, 3792, "directed-links-state-02.xml"),
+                Arguments.of(314986383L, 4071, "directed-links-state-03.xml"),
+                Arguments.of(508225197L, 6615, "directed-links-state-04.xml"),
+                Arguments.of(203698725L, 6234, "directed-links-state-05.xml"),
+                Arguments.of(1317213446L, 5230, "directed-links-state-06.xml"),
+                Arguments.of(2296516590L, 4025, "directed-links-state-07.xml"),
+                Arguments.of(159154406L, 1674, "directed-links-state-08.xml"),
+                Arguments.of(881115604L, 677, "directed-links-state-09.xml"),
+                Arguments.of(190005456L, 620, "directed-links-state-10.xml"),
+                Arguments.of(613910246L, 487, "directed-links-state-11.xml"),
+                Arguments.of(202041725L, 6106, "directed-links-state-12.xml"),
+                Arguments.of(714627694L, 357, "directed-links-state-13.xml")
         );
     }
 
