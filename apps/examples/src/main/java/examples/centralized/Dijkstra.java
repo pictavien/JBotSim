@@ -115,7 +115,7 @@ public class Dijkstra implements SelectionListener,MovementListener {
 
 	public static Topology buildTopology() {
 		Topology tp = new Topology();
-		new Dijkstra(tp).deployTopology(tp, 30);
+		new Dijkstra(tp);
 
 		return tp;
 	}
@@ -130,35 +130,5 @@ public class Dijkstra implements SelectionListener,MovementListener {
 	public void onSelection(Node node) {
 		selectedNode = node;
 		computeDijkstraFrom(selectedNode);
-	}
-
-	/*
-	 * Deployment take a random location for a first Node. Then, newly generated
-	 * node is located randomly in the communication range of the last generated
-	 * node.
-	 */
-	void deployTopology(Topology tp, int nbNodes) {
-		double cR = tp.getCommunicationRange();
-
-		Node prevNode = new Node();
-		prevNode.setID(0);
-		setLocationAround(tp,tp.getWidth()/2, tp.getHeight()/2, cR, prevNode);
-		tp.addNode(prevNode);
-
-
-		for (int i = 1; i < nbNodes; i++) {
-			Node node = new Node();
-			node.setID(i);
-			setLocationAround(tp, prevNode.getX(), prevNode.getY(), cR, node);
-			tp.addNode(node);
-			prevNode = node;
-		}
-	}
-
-	private void setLocationAround(Topology tp, double x, double y, double cR, Node n) {
-		double angle = 2 * Math.PI * Random.random();
-		double dx = .9*cR * Math.cos(angle);
-		double dy = .9*cR * Math.sin(angle);
-		n.setLocation(x + dx, y + dy);
 	}
 }
