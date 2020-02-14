@@ -3,7 +3,7 @@
   <topology speed="10" wireless-enabled="true">
     <classes>
       <node-class class="examples.basic.mobilebroadcast.MobileBroadcastNode" id="default"/>
-      <message-engine class="io.jbotsim.core.MessageEngine" id="default"/>
+      <message-engine class="io.jbotsim.core.DefaultMessageEngine" id="default"/>
       <link-resolver class="io.jbotsim.core.LinkResolver" id="default"/>
       <scheduler class="io.jbotsim.core.Scheduler" id="default"/>
       <clock-class class="examples.IterableClock" id="default"/>
