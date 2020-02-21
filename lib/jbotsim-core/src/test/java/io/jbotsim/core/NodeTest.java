@@ -73,4 +73,37 @@ class NodeTest {
     }
 
     // endregion
+
+    // region compareTo
+
+    @Test
+    void compareTo_null_throwsNPE (){
+        Node node = new Node();
+
+        assertThrows(NullPointerException.class, () -> {node.compareTo(null);});
+    }
+
+    @Test
+    void compareTo_greaterId_ok(){
+        checkComparison(1, 2, -1);
+    }
+    @Test
+    void compareTo_lesserId_ok(){
+        checkComparison(2, 1, 1);
+    }
+    @Test
+    void compareTo_sameId_ok(){
+        checkComparison(1, 1, 0);
+    }
+
+    private void checkComparison(int id1, int id2, int expectedResult) {
+        Node n1 = new Node();
+        n1.setID(id1);
+        Node n2 = new Node();
+        n2.setID(id2);
+
+        assertEquals(expectedResult, n1.compareTo(n2));
+    }
+
+    // endregion
 }

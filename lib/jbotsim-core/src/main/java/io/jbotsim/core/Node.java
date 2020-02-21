@@ -897,8 +897,12 @@ public class Node extends Properties implements ClockListener, Comparable<Node> 
     }
 
     @Override
-    public int compareTo(Node o) {
-        return (toString().compareTo(o.toString()));
+    public int compareTo(Node node) {
+        int myId = getID();
+        int otherId = node.getID();
+        if(myId < otherId) return -1;
+        if(myId > otherId) return 1;
+        return 0;
     }
 
     /**
