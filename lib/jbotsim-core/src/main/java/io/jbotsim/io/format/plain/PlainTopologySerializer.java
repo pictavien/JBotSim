@@ -32,6 +32,8 @@ public class PlainTopologySerializer implements TopologySerializer {
 
     protected static final String EOL = "\n";
     protected static final String SPACE = " ";
+    protected static final String ORIENTATION_MARKER_DIRECTED = "-->";
+    protected static final String ORIENTATION_MARKER_UNDIRECTED = "<-->";
 
     public void importFromString(Topology topology, String data){
         new Importer(topology, data).importTopology();
@@ -157,8 +159,24 @@ public class PlainTopologySerializer implements TopologySerializer {
 
         private void exportLinks(StringBuffer res) {
             for (Link l : topology.getLinks())
-                if (!l.isWireless())
-                    res.append(l.toString() + EOL);
+                exportLink(res, l);
+        }
+
+        private void exportLink(StringBuffer res, Link l) {
+            if (l.isWireless())
+                return;
+
+            String sourceSerializationTag = getSerializationTag(l.source);
+            String destinationSerializationTag = getSerializationTag(l.destination);
+            String orientationMarker = l.isDirected() ? ORIENTATION_MARKER_DIRECTED : ORIENTATION_MARKER_UNDIRECTED;
+
+            String linkAsString  = sourceSerializationTag + SPACE + orientationMarker + SPACE + destinationSerializationTag;
+
+            res.append(linkAsString + EOL);
+        }
+
+        private String getSerializationTag(Node node) {
+            return node.getID() + "";
         }
 
         private void exportNodes(StringBuffer res) {
@@ -168,8 +186,8 @@ public class PlainTopologySerializer implements TopologySerializer {
 
         private void exportNode(StringBuffer res, Node n) {
             String locationAsString = exportNodeLocation(n);
-            String nodeId = n.toString();
-            res.append(nodeId + SPACE + locationAsString + EOL);
+            String nodeSerializationTag = getSerializationTag(n);
+            res.append(nodeSerializationTag + SPACE + locationAsString + EOL);
         }
 
         private String exportNodeLocation(Node n) {
