@@ -29,13 +29,65 @@ import io.jbotsim.io.TopologySerializer;
 import java.util.HashMap;
 
 public class PlainTopologySerializer implements TopologySerializer {
+
+    protected static final String EOL = "\n";
+    protected static final String SPACE = " ";
+
     public void importFromString(Topology topology, String data){
-        topology.setCommunicationRange(Double.parseDouble(data.substring(data.indexOf(" ") + 1, data.indexOf("\n"))));
-        data = data.substring(data.indexOf("\n") + 1);
-        topology.setSensingRange(Double.parseDouble(data.substring(data.indexOf(" ") + 1, data.indexOf("\n"))));
-        data = data.substring(data.indexOf("\n") + 1);
-        HashMap<String, Node> nodeTable = new HashMap<>();
-        while (data.indexOf("[") > 0) {
+        new Importer(topology, data).importTopology();
+    }
+
+    public String exportToString(Topology topology){
+        return new Exporter(topology).exportTopology();
+    }
+
+    private class Importer {
+        private Topology topology;
+        private String data;
+
+        public Importer(Topology topology, String data) {
+            this.topology = topology;
+            this.data = data;
+        }
+
+        public void importTopology() {
+            importTopologyParameters();
+            HashMap<String, Node> nodeTable = importNodes();
+            importLinks(nodeTable);
+        }
+
+        private void importTopologyParameters() {
+            topology.setCommunicationRange(Double.parseDouble(data.substring(data.indexOf(SPACE) + 1, data.indexOf(EOL))));
+            jumpToNextLine();
+            topology.setSensingRange(Double.parseDouble(data.substring(data.indexOf(SPACE) + 1, data.indexOf(EOL))));
+            jumpToNextLine();
+        }
+
+
+        // region nodes
+        private HashMap<String, Node> importNodes() {
+            HashMap<String, Node> nodeTable = new HashMap<>();
+
+            while (hasNodes())
+                importNode(nodeTable);
+
+            return nodeTable;
+        }
+
+        private void importNode(HashMap<String, Node> nodeTable) {
+            Point location = parseNodeLocation();
+            try {
+                Node node = topology.newInstanceOfModel("default");
+                node.setLocation(location);
+                topology.addNode(node);
+                String id = data.substring(0, data.indexOf(SPACE));
+                node.setProperty("id", id);
+                nodeTable.put(id, node);
+                jumpToNextLine();
+            } catch (Exception e) {}
+        }
+
+        private Point parseNodeLocation() {
             double x = new Double(data.substring(data.indexOf("x") + 3, data.indexOf(", y")));
             double y = 0;
             double z = 0;
@@ -45,37 +97,93 @@ public class PlainTopologySerializer implements TopologySerializer {
             }else{
                 y = new Double(data.substring(data.indexOf("y") + 3, data.indexOf("]")));
             }
-            try {
-                Node node = topology.newInstanceOfModel("default");
-                node.setLocation(x, y, z);
-                topology.addNode(node);
-                String id = data.substring(0, data.indexOf(" "));
-                node.setProperty("id", id);
-                nodeTable.put(id, node);
-                data = data.substring(data.indexOf("\n") + 1);
-            } catch (Exception e) {}
+
+            return new Point (x, y, z);
         }
-        while (data.indexOf("--") > 0) {
-            Node n1 = nodeTable.get(data.substring(0, data.indexOf(" ")));
-            Node n2 = nodeTable.get(data.substring(data.indexOf(">") + 2, data.indexOf("\n")));
-            Link.Orientation orientation = (data.indexOf("<") > 0 && data.indexOf("<") < data.indexOf("\n")) ? Link.Orientation.UNDIRECTED : Link.Orientation.DIRECTED;
+
+        private boolean hasNodes() {
+            return data.indexOf("[") > 0;
+        }
+        // endregion nodes
+
+        // region links
+        private void importLinks(HashMap<String, Node> nodeTable) {
+            while (hasLinks())
+                importLink(nodeTable);
+        }
+
+        private boolean hasLinks() {
+            return data.indexOf("--") > 0;
+        }
+
+        private void importLink(HashMap<String, Node> nodeTable) {
+            String firstNodeId = data.substring(0, data.indexOf(SPACE));
+            String secondNodeId = data.substring(data.indexOf(">") + 2, data.indexOf(EOL));
+            Node n1 = nodeTable.get(firstNodeId);
+            Node n2 = nodeTable.get(secondNodeId);
+            Link.Orientation orientation = isCurrentLinkUndirected() ? Link.Orientation.UNDIRECTED : Link.Orientation.DIRECTED;
             topology.addLink(new Link(n1, n2, orientation, Link.Mode.WIRED));
-            data = data.substring(data.indexOf("\n") + 1);
+            jumpToNextLine();
         }
-    }
-    public String exportToString(Topology topology){
-        StringBuffer res = new StringBuffer();
-        res.append("cR " + topology.getCommunicationRange() + "\n");
-        res.append("sR " + topology.getSensingRange() + "\n");
-        for (Node n : topology.getNodes()) {
-            Point p2d = new Point();
-            p2d.setLocation(n.getLocation().getX(), n.getLocation().getY());
-            res.append(n.toString() + " " + p2d.toString().substring(p2d.toString().indexOf("[") -1) + "\n");
+
+        private boolean isCurrentLinkUndirected() {
+            return data.indexOf("<") > 0 && data.indexOf("<") < data.indexOf(EOL);
         }
-        for (Link l : topology.getLinks())
-            if (!l.isWireless())
-                res.append(l.toString() + "\n");
-        return res.toString();
+
+        // endregion links
+
+        private void jumpToNextLine() {
+            data = nextLine();
+        }
+        private String nextLine() {
+            return data.substring(data.indexOf(EOL) + 1);
+        }
     }
 
+    private class Exporter {
+        private Topology topology;
+
+        public Exporter(Topology topology) {
+            this.topology = topology;
+        }
+
+        public String exportTopology() {
+            StringBuffer res = new StringBuffer();
+            exportTopologyParams(res);
+            exportNodes(res);
+            exportLinks(res);
+            return res.toString();
+        }
+
+        private void exportLinks(StringBuffer res) {
+            for (Link l : topology.getLinks())
+                if (!l.isWireless())
+                    res.append(l.toString() + EOL);
+        }
+
+        private void exportNodes(StringBuffer res) {
+            for (Node n : topology.getNodes())
+                exportNode(res, n);
+        }
+
+        private void exportNode(StringBuffer res, Node n) {
+            String locationAsString = exportNodeLocation(n);
+            String nodeId = n.toString();
+            res.append(nodeId + SPACE + locationAsString + EOL);
+        }
+
+        private String exportNodeLocation(Node n) {
+            Point p2d = new Point(n.getLocation().getX(), n.getLocation().getY());
+
+            String locationAsString = p2d.toString();
+            int startIndex = locationAsString.indexOf("[") - 1; // this keeps the leading space
+
+            return locationAsString.substring(startIndex);
+        }
+
+        private void exportTopologyParams(StringBuffer res) {
+            res.append("cR" + SPACE + topology.getCommunicationRange() + EOL);
+            res.append("sR" + SPACE + topology.getSensingRange() + EOL);
+        }
+    }
 }
